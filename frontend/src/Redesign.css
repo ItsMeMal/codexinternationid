@@ -600,3 +600,18 @@ button:active{transform:translateY(1px)}
 @media(prefers-reduced-motion:reduce){
  .clip-poster>img,.clip-actions>button svg{transition:none!important}
 }
+
+
+/* Topic discovery is actionable on desktop and remains reachable on mobile. */
+.clip-topic-filter{display:inline-flex;align-items:center;gap:5px;margin-left:auto;padding:5px 8px;border:1px solid rgba(29,155,240,.35);border-radius:999px;background:var(--accent-bg);color:var(--accent);font-size:8px;font-weight:800;cursor:pointer}
+.clips-topic-row{width:100%;border:0;background:transparent;text-align:left;cursor:pointer}
+.clips-topic-row>svg{margin-left:auto;color:var(--quiet);transition:transform .16s}
+.clips-topic-row:hover,.clips-topic-row.active{background:var(--surface2)}
+.clips-topic-row:hover>svg,.clips-topic-row.active>svg{color:var(--accent);transform:translateX(2px)}
+.clips-topic-chips{display:none}
+@media(max-width:760px){
+ .view-clips .clips-topic-chips{display:flex;align-items:center;gap:7px;width:100%;overflow-x:auto;padding:0 1px 2px;scrollbar-width:none}
+ .view-clips .clips-topic-chips::-webkit-scrollbar{display:none}
+ .view-clips .clips-topic-chips button{flex:0 0 auto;padding:6px 9px;border:1px solid var(--line);border-radius:999px;background:var(--surface);color:var(--muted);font-size:8px;font-weight:750;cursor:pointer}
+ .view-clips .clips-topic-chips button.active{border-color:rgba(29,155,240,.45);background:var(--accent-bg);color:var(--accent)}
+}
